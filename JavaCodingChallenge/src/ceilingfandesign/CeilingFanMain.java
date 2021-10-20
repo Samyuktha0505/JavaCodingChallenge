@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class CeilingFanMain {
+	
 	// assuming initially the fan is in off setting
 	static int speed=0;
 	static boolean reverseflag=false;
@@ -13,11 +14,14 @@ public class CeilingFanMain {
 
 	public static void main(String[] args) throws DirectionException {
 		try {
-			while (true) {				
+			while (true) {	
+				// get the user direction in which the chord will be pulled
 				getDirection();
+				// get the speed accordingly
 				getSpeed();
 			}
 		}
+		// custom exception
 		catch(DirectionException e) {
 			e.printStackTrace();
 		}
@@ -65,6 +69,7 @@ public class CeilingFanMain {
 		}
 	}
 
+	// reading user input from console
 	static String readNextLine() {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String line = null;
