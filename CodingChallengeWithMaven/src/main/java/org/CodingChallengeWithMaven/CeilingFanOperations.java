@@ -5,13 +5,8 @@ public class CeilingFanOperations {
 	private int currentFanSpeed;
 	private boolean reverseFlag;
 
-	public String getDirection() {
-		String direction = getDirectionFormat();
-		return direction;
-	}
-
-	private String getDirectionFormat() {
-		return reverseFlag ? "antiClockwise" : "clockWise";
+	public String getDirection() {		
+		return  reverseFlag ? "antiClockwise" : "clockWise";
 	}
 
 	public int changeSpeed(int currentFanSpeed) {
@@ -25,7 +20,7 @@ public class CeilingFanOperations {
 		}
 		reverseFlag = !reverseFlag;
 		// will prefer to use loggers later
-		System.out.println("Fan is rotating in : " + getDirectionFormat() + " direction");
+		System.out.println("Fan is rotating in : " + getDirection() + " direction");
 		return --currentFanSpeed;
 	}
 
