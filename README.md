@@ -1,8 +1,10 @@
 # JavaCodingChallenge
+
+
 Simple Ceiling Fan Implementation
 
-Project Description:
 
+Project Description:
 In any language, implement a simple ceiling fan with these characteristics:
 
 ·         The unit has 2 pull cords:
@@ -19,17 +21,19 @@ o   One reverses the direction of the fan at the current speed setting.
 
 
 Objective:
+The Aim is to implement simple ceiling fan with two pull cords for speed settings and to obey all the rules mentioned in the description.
 
-The Aim is to implement simple ceiling fan implementation with two pull cords for speed settings. 
-When the user pulls clockwise fan speed increases to one level. When the user pulls anticlockwise fan speed decreases to one level.
 
 Working:
+I have tried to provide two approaches here, one with java console (user can interact with console and provide inputs to check) and 
+other with maven auto build (build junit cases and run them with maven).
 
-I have tried to provide two approaches here, one with java console (user can interact with console and provide inputs to check) and other with maven auto build (build junit cases and run them with maven).
 
-Extensibility: Fan speed settings are mentioned in a properties file, the code can handle different min, max settings of the fan and execute test cases accordingly.
+Extensibility:
+Fan speed settings are mentioned in a properties file, the code can handle different min, max settings of the fan and execute test cases accordingly.
 
-Console: 
+
+Testing in Console: 
 -> Initially fan speed is at off setting
 -> Enter the direction in which fan is rotated(cw/acw)
 -> Clock wise cord can only be pulled from zero
@@ -42,6 +46,7 @@ Console:
    Anticlock wise chord cannot be pulled when the fan is in off state
 -> If any other direction is entered, program ends with a custom exception
 
+
 Junit test cases:
 -> when the cord is pulled twice in clockwise direction - should give current speed as minimum fan setting+2
 -> when the cord is pulled max times and one more than max in clockwise direction - should give current speed as max and min respectively
@@ -53,11 +58,24 @@ Junit test cases:
 -> when direction is changed to anti clockwise when fan is off - exception expected
 -> All the test cases are passed
 
-Exception:
+
+Custom Exception:
 DirectionException:
-Messages: 
-Can't change to anticlockwise direction, when fan is at rest
-Can't move in anticlockwise direction, when fan is at rest
-Invalid Direction
+Exception Messages: 
+"Can't change to anticlockwise direction, when fan is at rest"
+"Can't move in anticlockwise direction, when fan is at rest"
+"Invalid Direction"
+
+
+Logging:
+Apache log4j 2.13.0 is used for logging purpose, log level is set to info, loggers are appended to console
+
+
+Software used:
+Eclipse IDE 2021
+Java 1.7
+Junit 4.11
+Maven dependencies
+Apache log4j 2.13.0
 
 
